@@ -1,0 +1,9 @@
+#POSTGRESQL
+spring:  datasource:     url: jdbc:postgresql://localhost:5432/demo_mvc?user=postgres&password=root
+    username: root
+    password: root
+
+
+#JPA  jpa:    hibernate:      ddl-auto: update
+    show-sql: true
+    open-in-view: true
