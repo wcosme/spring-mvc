@@ -3,7 +3,7 @@ server:  port: 8081
 #POSTGRESQL
 spring:  datasource:     url: jdbc:postgresql://localhost:5432/demo_mvc?user=postgres&password=root
     username: root
-    password: root
+    password: root   #THYMELEAF      thymeleaf:    cache: false
 
 
 #JPA  jpa:    hibernate:      ddl-auto: update
