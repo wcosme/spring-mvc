@@ -6,7 +6,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
-import br.com.wgsolution.curso.boot.domain.enuns.UF;
+import br.com.wgsolution.curso.boot.enuns.UF;
 
 @SuppressWarnings("serial")
 @Entity

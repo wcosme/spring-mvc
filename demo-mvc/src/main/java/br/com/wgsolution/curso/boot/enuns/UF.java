@@ -1,4 +1,4 @@
-package br.com.wgsolution.curso.boot.domain.enuns;
+package br.com.wgsolution.curso.boot.enuns;
 
 public enum UF {
 	
