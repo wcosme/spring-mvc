@@ -1,15 +1,14 @@
 package br.com.wgsolution.curso.boot.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
 
-import br.com.wgsolution.curso.boot.repositories.DepartamentoRepository;
+import br.com.wgsolution.curso.boot.domain.Departamento;
 
-@Service @Transactional(readOnly = false)
-public class DepartamentoService {
+public interface DepartamentoService {
 	
-	@Autowired
-	private DepartamentoRepository repository;
+	void salvar(Departamento departamento);
+	void editar(Departamento departamento);
+	void exluir(Long id);
+	List<Departamento> buscarTodos();
 
 }

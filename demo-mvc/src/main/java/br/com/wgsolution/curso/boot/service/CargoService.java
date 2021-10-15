@@ -1,15 +1,14 @@
 package br.com.wgsolution.curso.boot.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
 
-import br.com.wgsolution.curso.boot.repositories.CargoRepository;
+import br.com.wgsolution.curso.boot.domain.Cargo;
 
-@Service @Transactional(readOnly = false)
-public class CargoService {
+public interface CargoService {
 	
-	@Autowired
-	private CargoRepository repository;
+	void salvar(Cargo cargo);
+	void editar(Cargo cargo);
+	void exluir(Long id);
+	List<Cargo> buscarTodos();
 
 }
