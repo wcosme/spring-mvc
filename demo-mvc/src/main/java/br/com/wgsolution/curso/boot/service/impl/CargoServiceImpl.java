@@ -1,6 +1,7 @@
 package br.com.wgsolution.curso.boot.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,21 +25,29 @@ public class CargoServiceImpl implements CargoService{
 
 	@Override
 	public void editar(Cargo cargo) {
-		// TODO Auto-generated method stub
+		repository.save(cargo);
 		
 	}
 
 	@Override
 	public void exluir(Long id) {
-		// TODO Auto-generated method stub
+		repository.deleteById(id);
 		
 	}
 
-	@Transactional(readOnly = true)
-	@Override
+	@Override @Transactional(readOnly = true)
+	public Cargo buscaPorId(Long id) {
+		Optional<Cargo> cargo;
+		
+		cargo = repository.findById(id);
+		
+		return cargo.get();
+	}
+
+	@Override @Transactional(readOnly = true)
 	public List<Cargo> buscarTodos() {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}	
 
 }

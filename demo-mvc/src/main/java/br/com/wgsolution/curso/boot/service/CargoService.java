@@ -9,6 +9,7 @@ public interface CargoService {
 	void salvar(Cargo cargo);
 	void editar(Cargo cargo);
 	void exluir(Long id);
+	Cargo buscaPorId(Long id);
 	List<Cargo> buscarTodos();
 
 }
