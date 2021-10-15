@@ -1,4 +1,4 @@
-package br.com.wgsolution.curso.boot.web.controller;
+package br.com.wgsolution.curso.boot.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
