@@ -17,8 +17,6 @@ public class CargoController {
 	@GetMapping("/cadastrar")
 	public String cadastrar() {
 		
-		service.salvar(null);
-		
 		return "/cargo/cadastro";
 	}
 	
