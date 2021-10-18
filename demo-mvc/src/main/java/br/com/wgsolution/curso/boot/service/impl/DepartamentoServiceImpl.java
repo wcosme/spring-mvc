@@ -22,7 +22,7 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 
 	@Override
 	public void editar(Departamento departamento) {
-		
+		repository.save(departamento);
 	}
 
 	@Override
@@ -33,6 +33,11 @@ public class DepartamentoServiceImpl implements DepartamentoService {
 	@Override
 	public List<Departamento> buscarTodos() {
 		return repository.findAll();
+	}
+
+	@Override
+	public Departamento buscaPorId(Long id) {	
+		return repository.findById(id).get();
 	}
 
 }

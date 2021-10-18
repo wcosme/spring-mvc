@@ -10,5 +10,6 @@ public interface DepartamentoService {
 	void editar(Departamento departamento);
 	void exluir(Long id);
 	List<Departamento> buscarTodos();
+	Departamento buscaPorId(Long id);
 
 }
