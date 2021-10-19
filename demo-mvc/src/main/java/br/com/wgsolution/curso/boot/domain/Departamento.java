@@ -2,9 +2,21 @@ package br.com.wgsolution.curso.boot.domain;
 
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @SuppressWarnings("serial")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "DEPARTAMENTOS")
 public class Departamento extends AbstractEntity<Long> {
@@ -13,15 +25,6 @@ public class Departamento extends AbstractEntity<Long> {
 	private String nome;
 	
 	@OneToMany(mappedBy = "departamento")
-	private List<Cargo> cargos;
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
+	private List<Cargo> cargos;		
 	
 }
