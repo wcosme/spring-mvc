@@ -20,15 +20,13 @@ public class DepartamentoController {
 	private DepartamentoService service;
 
 	@GetMapping("/cadastrar")
-	public String cadastrar(Departamento departamento) {	
-		
+	public String cadastrar(Departamento departamento) {		
 		return "/departamento/cadastro";
 	}
 	
 	@GetMapping("/listar")
 	public String listar(ModelMap model) {
-		model.addAttribute("departamentos", service.buscarTodos());
-		
+		model.addAttribute("departamentos", service.buscarTodos());		
 		return "/departamento/lista";
 	}
 	
@@ -42,16 +40,14 @@ public class DepartamentoController {
 	
 	@GetMapping("/editar/{id}")
 	public String preEditar(@PathVariable("id") Long id, ModelMap model) {
-		model.addAttribute("departamento", service.buscaPorId(id));
-		
+		model.addAttribute("departamento", service.buscaPorId(id));		
 		return "/departamento/cadastro";
 	}
 	
 	@PostMapping("/editar")
 	public String editar(Departamento departamento, RedirectAttributes attr) {
 		service.editar(departamento);
-		attr.addFlashAttribute("success", "Departamento editado com sucesso.");
-		
+		attr.addFlashAttribute("success", "Departamento editado com sucesso.");		
 		return "redirect:/departamentos/cadastrar";
 	}
 	
@@ -65,9 +61,6 @@ public class DepartamentoController {
 			service.exluir(id);
 			model.addAttribute("success", "Departamento excluído com sucesso.");
 		}		
-		
-		return listar(model);
-		
+		return listar(model);		
 	}	
-	
 }
